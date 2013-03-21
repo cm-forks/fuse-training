@@ -1,8 +1,8 @@
 Camel Exercise 1
 ================
 
-Goal : Create a Camel Java Spring standalone project
-----------------------------------------------------
+Goal : Expression language & Bean
+---------------------------------
 
 A. Using Spring Camel Main
 

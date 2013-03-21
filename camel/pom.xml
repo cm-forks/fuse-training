@@ -21,8 +21,12 @@
         <!-- Exercise : Camel Spring Main + Spring  DSL -->
         <module>camel-exercise-2</module>
 
-        <!-- Exercise : Camel Spring Main + Spring  DSL -->
+        <!-- Exercise : Camel Web + Spring DSL -->
         <module>camel-exercise-3</module>
+
+        <!-- Exercise : Camel Expression language (simple, xpath, ...) & bean -->
+        <module>camel-exercise-3</module>
+
     </modules>
 
 

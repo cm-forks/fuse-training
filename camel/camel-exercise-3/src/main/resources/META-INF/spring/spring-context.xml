@@ -6,11 +6,10 @@
        http://camel.apache.org/schema/spring
        http://camel.apache.org/schema/spring/camel-spring.xsd">
 
+    <bean id="myRouteBuilder" class="org.redhat.fuse.training.camel.MyRouteBuilder"/>
+
     <camelContext xmlns="http://camel.apache.org/schema/spring">
-        <route>
-            <from uri="timer://exercise2?delay=2000"/>
-            <log message=">> This is the second Camel exercise" loggingLevel="INFO"/>
-        </route>
+        <routeBuilder ref="myRouteBuilder"/>
     </camelContext>
 
 </beans>
