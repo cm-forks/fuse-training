@@ -1,14 +1,17 @@
 package org.redhat.fuse.training.camel;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.LoggingLevel;
-import org.apache.camel.Processor;
+import org.apache.camel.*;
+import org.apache.camel.builder.DefaultErrorHandlerBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.model.RouteDefinition;
+import org.apache.camel.spi.RouteContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class MainApp1 {
 
@@ -36,14 +39,24 @@ public class MainApp1 {
             }
         };
 
+        // We will use RouteDefinition
+        // Not recommended way
+        RouteDefinition rd = new RouteDefinition();
+        rd.setExchangePattern(ExchangePattern.InOnly);
+        rd.setAutoStartup("true");
+        rd.setErrorHandlerBuilder(new DefaultErrorHandlerBuilder());
+        rd.setTrace("false");
 
+        rd.from("timer://exercise2").log(LoggingLevel.INFO, ">>> Using route definition");
+
+        camelContext.addRouteDefinition(rd);
         camelContext.addRoutes(routeBuilder);
 
         // Start the container
         camelContext.start();
 
         // give it time to realize it has work to do
-        Thread.sleep(10000);
+        Thread.sleep(20000);
 
     }
 }

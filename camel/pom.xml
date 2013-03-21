@@ -17,8 +17,12 @@
     <modules>
         <!-- Exercise : Java Main & Camel Main + Java DSL -->
         <module>camel-exercise-1</module>
+
         <!-- Exercise : Camel Spring Main + Spring  DSL -->
         <module>camel-exercise-2</module>
+
+        <!-- Exercise : Camel Spring Main + Spring  DSL -->
+        <module>camel-exercise-3</module>
     </modules>
 
 

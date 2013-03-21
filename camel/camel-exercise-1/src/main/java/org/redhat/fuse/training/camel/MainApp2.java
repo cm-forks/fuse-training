@@ -1,10 +1,13 @@
 package org.redhat.fuse.training.camel;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.ExchangePattern;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Processor;
+import org.apache.camel.builder.DefaultErrorHandlerBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.main.Main;
+import org.apache.camel.model.RouteDefinition;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -33,6 +36,7 @@ public class MainApp2 {
 
         // run until you terminate the JVM
         logger.info("Starting Camel. Use ctrl + c to terminate the JVM.\n");
+
         main.run();
     }
 
