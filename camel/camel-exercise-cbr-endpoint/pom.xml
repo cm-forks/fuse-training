@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>camel-exercise-cbr-endpoints</artifactId>
-    <name>RedHat Training :: Fuse :: Camel exercise :: Endpoints Inject</name>
+    <artifactId>camel-exercise-cbr-endpoint</artifactId>
+    <name>RedHat Training :: Fuse :: Camel exercise :: Endpoint Injection</name>
 
     <dependencies>
         <dependency>

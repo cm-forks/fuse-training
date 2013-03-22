@@ -32,7 +32,7 @@ public class RouteByFileNameRouter
 		from( sourceUri )
 			.convertBodyTo( String.class )
 // An alternative way to print out logging statements is to hand it to the log component through an URI
-			.to( "log:com.fusesource.camel.exercises.cbr?level=DEBUG&showHeaders=true" )
+			.to( "log:org.jboss.fuse.training.camel..cbr?level=DEBUG&showHeaders=true" )
 			.choice()
 				.when()
                     .simple( "${file:onlyname} == 'EUPayments.txt'" )

@@ -23,6 +23,35 @@ public class MainApp1 {
         // CamelContext = container where we will register the routes
         DefaultCamelContext camelContext = new DefaultCamelContext();
 
+        // 1. Using RouteDefinition
+        RouteDefinition rd = new RouteDefinition();
+        rd.setExchangePattern(ExchangePattern.InOnly);
+        rd.setAutoStartup("true");
+        rd.setErrorHandlerBuilder(new DefaultErrorHandlerBuilder());
+        rd.setTrace("false");
+
+        // A From
+        FromDefinition from = new FromDefinition("timer://exercise-rd?delay=1000");
+        List<FromDefinition> fromDefinitionList = new ArrayList<FromDefinition>();
+        fromDefinitionList.add(from);
+
+        // A Log EIP
+        List<ProcessorDefinition<?>> processorDefinitions = new ArrayList<ProcessorDefinition<?>>();
+        LogDefinition logDefinition = new LogDefinition(">> This is the first Camel exercise - using Route Definition");
+        logDefinition.setLoggingLevel(LoggingLevel.INFO );
+
+        // A Simple processor
+        ToDefinition to = new ToDefinition();
+        to.setUri("log:org.jboss.training.fuse?Level=DEBUG");
+
+        processorDefinitions.add(logDefinition);
+        processorDefinitions.add(to);
+
+        // Complete Route definition
+        rd.setInputs(fromDefinitionList);
+        rd.setOutputs(processorDefinitions);
+
+        // 2. Using RouteBuilder
         RouteBuilder routeBuilder = new RouteBuilder() {
 
             // A Route sending every x seconds a message
@@ -30,35 +59,17 @@ public class MainApp1 {
 
             @Override
             public void configure() throws Exception {
-                from("timer://exercise1delay=1000")
-                        .log(LoggingLevel.INFO, ">> This is the first Camel exercise")
+                from("timer://exercise-rb?delay=1000")
+                        .log(LoggingLevel.INFO, ">> This is the first Camel exercise - using Route Builder")
                         .process(new Processor() {
                             public void process(Exchange exchange) throws Exception {
-                                logger.info("Invoked timer at " + new Date());
+                                logger.info(">> Invoked timer at " + new Date() + " for RouteBuilder");
                             }
                         });
             }
         };
 
-        // We will use RouteDefinition
-        // Not recommended way
-        RouteDefinition rd = new RouteDefinition();
-        rd.setExchangePattern(ExchangePattern.InOnly);
-        rd.setAutoStartup("true");
-        rd.setErrorHandlerBuilder(new DefaultErrorHandlerBuilder());
-        rd.setTrace("false");
-
-        FromDefinition from = new FromDefinition("timer://exercise2");
-        List<FromDefinition> fromDefinitionList = new ArrayList<FromDefinition>();
-        fromDefinitionList.add(from);
-
-        LogDefinition log = new LogDefinition().log(LoggingLevel.INFO, ">>> Using route definition");
-        List<ProcessorDefinition<?>> processorDefinitions = new ArrayList<ProcessorDefinition<?>>();
-        processorDefinitions.add(log);
-
-        rd.setInputs(fromDefinitionList);
-        rd.setOutputs(processorDefinitions);
-
+        // Register RouteDefinition & RouteBuilder
         camelContext.addRouteDefinition(rd);
         camelContext.addRoutes(routeBuilder);
 

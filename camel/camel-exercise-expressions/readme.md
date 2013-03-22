@@ -1,5 +1,5 @@
-Camel Exercise 3
-================
+Camel Exercise Expressions
+==========================
 
 Goal : Expression language & Bean
 ---------------------------------

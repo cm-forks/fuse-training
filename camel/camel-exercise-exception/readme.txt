@@ -21,9 +21,9 @@ Deployment:
 
     mvn clean install
 
-then please enter this in the Karaf Console:
+then please enter this in the JBoss Fuse Console:
 
-    osgi:install -s mvn:com.fusesource.training/camel-exercises-exception/2010.07.12
+    osgi:install -s mvn:org.jboss.fuse.training/camel-exercise-exception/1.0
 
 3) Install it as feature (need to add the features URL ahead of time, please see the camel-exercises-features project)
 
@@ -70,7 +70,7 @@ Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [rout
 
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route1] - This is an Euro XML Payment: EUPayments.xml
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route2] - Message will be processed only 1 time.
-Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [com.fusesource.camel.exercises.exception.MyBean] - >>>> Exception created for : EUR, counter = 1
+Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [org.jboss.fuse.training.camel.exercise.exception.MyBean] - >>>> Exception created for : EUR, counter = 1
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route4] - %%% MyFunctional Exception handled.
 
      USPAyment - Exception will be handled by DeadLetterChannel which will repeat twice the last step of the camel route
@@ -102,9 +102,9 @@ Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [rout
 
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route1] - This is an USD XML Payment: USPayments.xml
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route3] - Message will be processed 2 times.
-Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [com.fusesource.camel.exercises.exception.MyBean] - >>>> Exception created for : USD, counter = 1
-Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [com.fusesource.camel.exercises.exception.MyBean] - >>>> Exception created for : USD, counter = 2
-Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [com.fusesource.camel.exercises.exception.MyBean] - >>>> Exception created for : USD, counter = 3
+Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [org.jboss.fuse.training.camel.exercise.exception.MyBean] - >>>> Exception created for : USD, counter = 1
+Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [org.jboss.fuse.training.camel.exercise.exception.MyBean] - >>>> Exception created for : USD, counter = 2
+Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [org.jboss.fuse.training.camel.exercise.exception.MyBean] - >>>> Exception created for : USD, counter = 3
 Camel (camel-1) thread #0 - file://./target/test-classes/camel/in/xml INFO [route4] - >>> Info send to DLQ
 
 

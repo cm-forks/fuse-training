@@ -7,8 +7,8 @@
   		http://camel.apache.org/schema/spring
 		http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <bean id="myBeanError" class="com.fusesource.camel.exercises.exception.MyBean"/>
-    <bean id="myBeanErrorException" class="com.fusesource.camel.exercises.exception.MyBean"/>
+    <bean id="myBeanError" class="org.jboss.fuse.training.camel.exception.MyBean"/>
+    <bean id="myBeanErrorException" class="org.jboss.fuse.training.camel.exception.MyBean"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
 

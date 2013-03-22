@@ -1,5 +1,5 @@
-Camel Exercise 2
-================
+Camel Exercise Spring Standalone
+================================
 
 Goal : Create a Camel Java Spring standalone project
 ----------------------------------------------------

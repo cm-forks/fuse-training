@@ -61,12 +61,13 @@ public class RouteByCurrencyRouter extends RouteBuilder {
         .log("Message will be processed only 1 time.")
         .beanRef("myBeanErrorException");
 
-        from(directErrorHandler)
-        .routeId("direct-error-handler")
+        from(directErrorHandler).routeId("direct-error-handler")
+        // We use DLD route information after 2 retries
         .errorHandler(deadLetterChannel(directDLQError).maximumRedeliveries(2))
         .log("Message will be processed 2 times.")
         .beanRef("myBeanError");
 
+        // Direct Camel Routes
         from(directDLQError).routeId("DLQ")
         .log(">>> Info send to DLQ");
 

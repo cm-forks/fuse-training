@@ -1,5 +1,5 @@
-Camel Exercise 1
-================
+Camel Exercise Standalone
+=========================
 
 Goal : Create a Camel Java standalone project
 ---------------------------------------------

@@ -10,7 +10,7 @@
     <camelContext trace="true" xmlns="http://camel.apache.org/schema/spring">
 
         <packageScan>
-            <package>com.fusesource.camel.exercises.cbr</package>
+            <package>org.jboss.fuse.training.camel.cbr</package>
         </packageScan>
 
         <endpoint id="sourceDirectoryXml" uri="file:./target/test-classes/camel/in/xml"/>
