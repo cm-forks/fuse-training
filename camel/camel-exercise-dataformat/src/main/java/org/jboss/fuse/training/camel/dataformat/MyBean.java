@@ -1,28 +1,28 @@
 package org.jboss.fuse.training.camel.dataformat;
 
 import org.apache.camel.Exchange;
+import org.jboss.fuse.training.camel.dataformat.model.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class MyBean {
 
     private static final Logger logger = LoggerFactory.getLogger(MyBean.class);
-    private int counter = 0;
 
     public void process(Exchange exchange) throws Exception {
 
-        String payment = (String) exchange.getIn().getHeader("Payment");
+        List<?> list = (List<?>) exchange.getIn().getBody();
+        HashMap<String, Object> map = (HashMap<String, Object>) list.get(0);
+        String modelKey = Student.class.getName();
+        Student student = (Student) map.get(modelKey);
 
-        if (payment == "EUR") {
-           counter++;
-           logger.info(">>>> Exception created for : " + payment + ", counter = " + counter);
-           throw new MyFunctionalException(">>>> MyFunctionalException created.");
-        } else if (payment == "USD") {
-           counter++;
-           logger.info(">>>> Exception created for : " + payment + ", counter = " + counter);
-           throw new Exception("===> Exception created");
-        }
+        student.setStatus("true");
+        student.setRoom("jboss-fuse-0123");
 
+        exchange.getIn().setBody(student);
     }
 
 }

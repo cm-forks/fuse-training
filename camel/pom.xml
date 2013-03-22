@@ -26,9 +26,15 @@
 
         <!-- Exercise : Camel Unit Test -->
         <module>camel-exercise-unit-test</module>
+
+        <!-- Exercise : Camel Dataformat with Bindy & CSV -->
         <module>camel-exercise-dataformat</module>
-        <module>camel-exercise-cbr-endpoints</module>
+
+        <!-- Exercise : Camel Exceptions (DLQ, onException) -->
         <module>camel-exercise-exception</module>
+
+        <!-- Exercise : Content Based Router + endpoint -->
+        <module>camel-exercise-cbr-endpoint</module>
 
     </modules>
 

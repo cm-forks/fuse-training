@@ -11,9 +11,12 @@ mvn exec:java -Dexec.mainClass="org.jboss.fuse.training.camel.SpringMainApp"
 cd ../camel-exercise-exception
 mvn clean camel:run
 
-cd ../camel-exercise-cbr-endpoint
+cd ../camel-exercise-dataformat
 mvn clean camel:run
 
-cd ../camel-exercise-dataformat
+cd ../camel-exercise-unit-test
+mvn clean test
+
+cd ../camel-exercise-cbr-endpoint
 mvn clean camel:run
 

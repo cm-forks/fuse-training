@@ -7,8 +7,7 @@
   		http://camel.apache.org/schema/spring
 		http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <bean id="myBeanError" class="com.fusesource.camel.exercises.exception.MyBean"/>
-    <bean id="myBeanErrorException" class="com.fusesource.camel.exercises.exception.MyBean"/>
+    <bean id="myBean" class="org.jboss.fuse.training.camel.dataformat.MyBean"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
 
@@ -16,13 +15,7 @@
             <package>org.jboss.fuse.training.camel.dataformat</package>
         </packageScan>
 
-        <jmxAgent statisticsLevel="All" registerNewRoutes="true" usePlatformMBeanServer="true" createConnector="true" onlyRegisterProcessorWithCustomId="false" disabled="false" id="agent"/>
-
-        <endpoint uri="file:/camel-exercises/exception/in/xml" id="sourceDirectoryXml"/>
-        <endpoint uri="direct://errorHandlerWithException" id="directErrorHandlerWithException"/>
-        <endpoint uri="direct://errorHandler" id="directErrorHandler"/>
-        <endpoint uri="file:/camel-exercises/exception/xml/out/?fileExist=Append&amp;fileName=money-${date:now:yyyyMMdd}.xml" id="moneyUriXml"/>
-        <endpoint uri="direct://directDLQError" id="directDLQError"/>
+        <endpoint id="csvDirectory" uri="file:/camel-exercises/exception/in/xml"/>
 
     </camelContext>
 
