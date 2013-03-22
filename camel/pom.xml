@@ -12,17 +12,23 @@
     <artifactId>camel</artifactId>
     <packaging>pom</packaging>
 
-    <name>RedHat Training :: Fuse :: Camel exercises</name>
+    <name>RedHat Training :: Fuse :: Camel exercise</name>
 
     <modules>
         <!-- Exercise : Java Main & Camel Main + Java DSL -->
-        <module>camel-exercise-1</module>
+        <module>camel-exercise-standalone</module>
 
         <!-- Exercise : Camel Spring Main + Spring  DSL -->
-        <module>camel-exercise-2</module>
+        <module>camel-exercise-spring-standalone</module>
 
         <!-- Exercise : Camel Expression language (simple, xpath, ...) & bean -->
-        <module>camel-exercise-3</module>
+        <module>camel-exercise-expressions</module>
+
+        <!-- Exercise : Camel Unit Test -->
+        <module>camel-exercise-unit-test</module>
+        <module>camel-exercise-dataformat</module>
+        <module>camel-exercise-cbr-endpoints</module>
+        <module>camel-exercise-exception</module>
 
     </modules>
 
