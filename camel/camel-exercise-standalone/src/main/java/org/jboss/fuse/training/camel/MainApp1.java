@@ -42,7 +42,7 @@ public class MainApp1 {
 
         // A Simple processor
         ToDefinition to = new ToDefinition();
-        to.setUri("log:org.jboss.training.fuse?Level=DEBUG");
+        to.setUri("log:org.jboss.training.fuse?level=DEBUG");
 
         processorDefinitions.add(logDefinition);
         processorDefinitions.add(to);
