@@ -1,4 +1,4 @@
-Camel Exercise 1
+Camel Exercise 2
 ================
 
 Goal : Create a Camel Java Spring standalone project
@@ -14,4 +14,4 @@ Steps to do :
     2) Add the ApplicationContext URI
     3) Run locally the camel routes
 
-    Run the project : mvn exec:java -Dexec.mainClass="org.redhat.fuse.training.camel.SpringMainApp"
+    Run the project : mvn exec:java -Dexec.mainClass="org.jboss.fuse.training.camel.SpringMainApp"

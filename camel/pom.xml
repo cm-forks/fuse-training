@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>project</artifactId>
-        <groupId>org.redhat.fuse.training</groupId>
+        <groupId>org.jboss.fuse.training</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -20,9 +20,6 @@
 
         <!-- Exercise : Camel Spring Main + Spring  DSL -->
         <module>camel-exercise-2</module>
-
-        <!-- Exercise : Camel Web + Spring DSL -->
-        <module>camel-exercise-3</module>
 
         <!-- Exercise : Camel Expression language (simple, xpath, ...) & bean -->
         <module>camel-exercise-3</module>

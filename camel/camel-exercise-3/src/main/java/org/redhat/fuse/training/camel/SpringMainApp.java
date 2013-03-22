@@ -1,4 +1,4 @@
-package org.redhat.fuse.training.camel;
+package org.jboss.fuse.training.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.spring.Main;

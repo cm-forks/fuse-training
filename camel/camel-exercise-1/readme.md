@@ -15,7 +15,7 @@ Steps to do :
     3) Register a camel Route (routeBuilder)
     4) Run locally the camel route
 
-    Run the project : mvn exec:java -Dexec.mainClass="org.redhat.fuse.training.camel.MainApp1"
+    Run the project : mvn exec:java -Dexec.mainClass="org.jboss.fuse.training.camel.MainApp1"
 
 
 B. Using Camel Main
@@ -29,4 +29,4 @@ Steps to do :
     3) Run locally the camel route
     4) Exit the route using ctrl-c
 
-    Run the project : mvn exec:java -Dexec.mainClass="org.redhat.fuse.training.camel.MainApp2"
+    Run the project : mvn exec:java -Dexec.mainClass="org.jboss.fuse.training.camel.MainApp2"

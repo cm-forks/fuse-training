@@ -6,7 +6,7 @@
        http://camel.apache.org/schema/spring
        http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <bean id="myRouteBuilder" class="org.redhat.fuse.training.camel.MyRouteBuilder"/>
+    <bean id="myRouteBuilder" class="org.jboss.fuse.training.camel.MyRouteBuilder"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
         <routeBuilder ref="myRouteBuilder"/>
